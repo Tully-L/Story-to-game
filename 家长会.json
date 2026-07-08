@@ -1,0 +1,1069 @@
+{
+  "meta": {
+    "title": "家长会",
+    "author": "改编自生活素材",
+    "version": "1.0.0",
+    "description": "你是这两个孩子的小姨，今天替你姐去开家长会。一只只爱你一个人的小黄狗、一个懒洋洋拖长腔的哥哥、一个班上倒数第一却毫不在乎的妹妹、一个开口就停不下的姐姐——这个早晨从你骑车进小区那一刻开始裹住你。",
+    "theme": "paper",
+    "ambient": "none",
+    "cover": {
+      "label": "一个普通的星期一",
+      "tagline": "哥哥三年级，妹妹一年级——你选哪个。"
+    },
+    "variableName": "家气",
+    "initialVariable": 50
+  },
+  "startNodeId": "c1_01",
+  "variables": {
+    "huangDu": 0,
+    "meiWei": 0,
+    "geDu": 0,
+    "facepalmCount": 0,
+    "mentioned": false
+  },
+  "achievements": {
+    "ach_huang_squat": {
+      "title": "蹲下来这件事",
+      "description": "对小黄蹲下了。它认得你认得了好几年。"
+    },
+    "ach_huang_hug": {
+      "title": "把它抱起来",
+      "description": "你抱起了小黄。它的体温烫得不像话。"
+    },
+    "ach_long_tone": {
+      "title": "拖长腔的姐妹",
+      "description": "你用同样的拖长腔回了哥哥。"
+    },
+    "ach_catch_meimei": {
+      "title": "一秒接住",
+      "description": "妹妹蹦过来你接住了她。"
+    },
+    "ach_roast_partner": {
+      "title": "评书共犯",
+      "description": "你跟着姐姐一起吐槽妹妹。"
+    },
+    "ach_three_stop": {
+      "title": "拦不住的",
+      "description": "你试图制止你姐的连珠炮。失败。"
+    },
+    "ach_laughed_out": {
+      "title": "笑出声了",
+      "description": "再也憋不住。"
+    },
+    "ach_facepalm": {
+      "title": "扶额第三次",
+      "description": "今天早上你已经扶过三次额头了。"
+    },
+    "ach_helped_clean": {
+      "title": "顺手的人",
+      "description": "进门就顺手收拾。"
+    },
+    "ach_this_family": {
+      "title": "这家人",
+      "description": "你身上沾了一整套这家的气。"
+    },
+    "ach_polite": {
+      "title": "礼貌的距离",
+      "description": "你始终留在外人这一侧。"
+    },
+    "ach_reverse_q": {
+      "title": "那您选哪个",
+      "description": "你把问题踢了回去。姐姐愣了半秒。"
+    },
+    "ach_unspoken": {
+      "title": "没说出口",
+      "description": "你今天本来要说一件事。它被打断了。"
+    },
+    "ach_true_ending": {
+      "title": "那我去妹妹班",
+      "description": "你拿走了一个'老师都认识的'孩子。"
+    }
+  },
+  "nodes": {
+    "c1_01": {
+      "chapterTitle": "第一章 · 一楼的窗",
+      "title": "早晨的街道",
+      "progress": 1,
+      "scene": {
+        "id": "morning_street",
+        "name": "早晨的街道",
+        "type": "major",
+        "description": "豆浆摊冒着白汽，电动车铃响成一片，早自习快迟到的小孩从你车边窜过去。",
+        "arrival": "你骑车出门，风把发尾吹乱。"
+      },
+      "segments": [
+        { "text": "星期一,八点不到。" },
+        { "text": "你短发,圆框眼镜,书包斜跨在身后,车筐里塞着两份没吃完的鸡蛋灌饼。" },
+        { "speaker": "系统", "text": "今天你姐让你替她去开家长会。你应了。" }
+      ],
+      "choices": [
+        { "text": "蹬两下加速", "next": "c1_02", "changes": { "val": 0 } }
+      ]
+    },
+    "c1_02": {
+      "title": "拐进老街",
+      "progress": 3,
+      "scene": {
+        "id": "morning_street",
+        "name": "早晨的街道"
+      },
+      "segments": [
+        { "text": "你拐进那条窄街。两边是九十年代的老楼,一楼窗户都装了防盗网,晾衣绳上挂着昨晚没收的衬衫。" },
+        { "text": "前面那个院子门口有棵老槐树。" },
+        { "text": "你在树底下减速。" }
+      ],
+      "next": "c1_03"
+    },
+    "c1_03": {
+      "title": "老小区门口",
+      "progress": 5,
+      "scene": {
+        "id": "old_xiaoqu",
+        "name": "老小区一楼窗外",
+        "type": "major",
+        "description": "防盗窗里晾着两件儿童校服。屋里有人讲话,有人尖叫,有人在洗碗。",
+        "arrival": "你把车停在窗根下。"
+      },
+      "segments": [
+        { "text": "你姐家在这栋楼一楼,窗户正对院门。" },
+        { "text": "你下车,撑好车撑。" }
+      ],
+      "next": "c1_04"
+    },
+    "c1_04": {
+      "title": "小黄",
+      "progress": 7,
+      "scene": {
+        "id": "old_xiaoqu",
+        "name": "老小区一楼窗外"
+      },
+      "segments": [
+        { "text": "门口那只小黄狗已经看见你了。" },
+        { "text": "它不叫,也不绕圈——它直接朝你冲过来,中途两次差点踩到自己耳朵。" },
+        { "speaker": "系统", "text": "小黄只对你一个人这样。" },
+        { "text": "它扑到你脚边。" }
+      ],
+      "choices": [
+        { "text": "蹲下", "next": "c1_04a_cb", "changes": { "val": 5, "set": { "huangDu": 2 }, "addFlag": "touchedHuang", "unlockAchievement": "ach_huang_squat" } },
+        { "text": "站着伸手摸它头", "next": "c1_04b_cb", "changes": { "val": 2, "set": { "huangDu": 1 } } },
+        { "text": "弯腰把它抱起来", "next": "c1_04c_cb", "changes": { "val": 7, "set": { "huangDu": 3 }, "addFlag": "huggedHuang", "unlockAchievement": "ach_huang_hug" } }
+      ]
+    },
+    "c1_04a_cb": {
+      "title": "蹲",
+      "progress": 9,
+      "scene": {
+        "id": "old_xiaoqu",
+        "name": "老小区一楼窗外"
+      },
+      "segments": [
+        { "text": "你刚一蹲下,它就把头钻进你怀里。" },
+        { "text": "舌头啪嗒啪嗒舔你手背。你眼镜起了一层雾。" },
+        { "text": "你没擦,先摸它后脑勺。" }
+      ],
+      "next": "c1_05"
+    },
+    "c1_04b_cb": {
+      "title": "拍",
+      "progress": 9,
+      "scene": {
+        "id": "old_xiaoqu",
+        "name": "老小区一楼窗外"
+      },
+      "segments": [
+        { "text": "你站着,手伸下去拍它脑袋。" },
+        { "text": "它不满意。两条前腿扒住你裤子,继续往上够。" },
+        { "speaker": "系统", "text": "小黄不肯。" }
+      ],
+      "next": "c1_05"
+    },
+    "c1_04c_cb": {
+      "title": "抱",
+      "progress": 9,
+      "scene": {
+        "id": "old_xiaoqu",
+        "name": "老小区一楼窗外"
+      },
+      "segments": [
+        { "text": "你把它抱起来。它的体温烫得不像话,整个塌在你胳膊上。" },
+        { "text": "它舔你下巴一下,又一下。" },
+        { "text": "你笑着躲。" }
+      ],
+      "next": "c1_05"
+    },
+    "c1_05": {
+      "title": "屋里有人",
+      "progress": 11,
+      "scene": {
+        "id": "old_xiaoqu",
+        "name": "老小区一楼窗外"
+      },
+      "segments": [
+        { "text": "屋里传出声音。" },
+        { "text": "你姐在跟什么人说话——不,是在跟自己说话,边说边收拾。" }
+      ],
+      "next": "c1_06"
+    },
+    "c1_06": {
+      "title": "哥哥的声音",
+      "progress": 13,
+      "scene": {
+        "id": "old_xiaoqu",
+        "name": "老小区一楼窗外"
+      },
+      "segments": [
+        { "speaker": "哥哥", "text": "姨——" },
+        { "text": "声音是从被窝里出来的,拖得长长的,尾音往下掉。" }
+      ],
+      "next": "c1_07"
+    },
+    "c1_07": {
+      "title": "妹妹的声音",
+      "progress": 15,
+      "scene": {
+        "id": "old_xiaoqu",
+        "name": "老小区一楼窗外"
+      },
+      "segments": [
+        { "speaker": "妹妹", "text": "姨!姨!姨!姨!" },
+        { "text": "她的声音从床上反弹下来,你猜她又在蹦。" }
+      ],
+      "next": "c1_08"
+    },
+    "c1_08": {
+      "title": "门",
+      "progress": 17,
+      "scene": {
+        "id": "old_xiaoqu",
+        "name": "老小区一楼窗外"
+      },
+      "segments": [
+        { "text": "你绕到门口。" },
+        { "text": "门虚掩着。" }
+      ],
+      "choices": [
+        { "text": "推门进去", "next": "c2_01", "changes": { "val": 0 } },
+        { "text": "先敲两下", "next": "c2_01_polite", "changes": { "val": -2 } }
+      ]
+    },
+    "c2_01_polite": {
+      "title": "敲门",
+      "progress": 19,
+      "scene": {
+        "id": "old_xiaoqu",
+        "name": "老小区一楼窗外"
+      },
+      "segments": [
+        { "text": "你敲了两下。" },
+        { "speaker": "姐姐", "text": "敲什么敲快进来——" },
+        { "text": "她的声音穿过门缝,带着洗碗水的哗哗声。" }
+      ],
+      "next": "c2_01"
+    },
+    "c2_01": {
+      "chapterTitle": "第二章 · 还没下床的屋子",
+      "title": "进门",
+      "progress": 22,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家",
+        "type": "major",
+        "description": "椅背上搭着外套,茶几上摆着没拧盖的酱油,阳台传来洗衣机甩干的声音。",
+        "arrival": "你推门进去,屋里的暖气和早饭气一起扑你脸上。"
+      },
+      "segments": [
+        { "text": "客厅地上一只袜子,沙发上半本翻开的语文书,茶几下卧着另一只袜子。" },
+        { "text": "你姐站在厨房门口,手里举着一只碗,头发还没扎。" }
+      ],
+      "next": "c2_02"
+    },
+    "c2_02": {
+      "title": "姐姐",
+      "progress": 24,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "speaker": "姐姐", "text": "来啦。" },
+        { "text": "她头都没抬。" }
+      ],
+      "choices": [
+        { "text": "\"嗯。\"", "next": "c2_02a_cb", "changes": { "val": 0 } },
+        { "text": "\"今天怎么这么早,姐?\"", "next": "c2_02b_cb", "changes": { "val": 2 } },
+        { "text": "顺手把茶几上的袜子捡起来", "next": "c2_02c_cb", "changes": { "val": 5, "addFlag": "helpedClean", "unlockAchievement": "ach_helped_clean" } }
+      ]
+    },
+    "c2_02a_cb": {
+      "title": "嗯",
+      "progress": 26,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "text": "你应了一声。" },
+        { "speaker": "姐姐", "text": "你今天替我去开家长会,记得吧。" },
+        { "text": "她在水池前面边洗碗边说。" }
+      ],
+      "next": "c2_03"
+    },
+    "c2_02b_cb": {
+      "title": "怎么这么早",
+      "progress": 26,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "speaker": "姐姐", "text": "早什么早,我五点半就起来了。" },
+        { "text": "她从水池里抬起头瞪你一眼,又埋下去。" },
+        { "speaker": "姐姐", "text": "我赶十点的飞机,行李还没收。" }
+      ],
+      "next": "c2_03"
+    },
+    "c2_02c_cb": {
+      "title": "顺手",
+      "progress": 26,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "text": "你弯腰把茶几底下那只袜子也捡了起来,跟沙发上那只凑成一对。" },
+        { "speaker": "姐姐", "text": "别捡别捡,一会儿又乱。" },
+        { "text": "她嘴上说着,手里那块抹布擦得更快了。" }
+      ],
+      "next": "c2_03"
+    },
+    "c2_03": {
+      "title": "哥哥",
+      "progress": 28,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "text": "你走到卧室门口。" },
+        { "text": "哥哥裹着被子坐在床上,脑袋一半埋在被子里,头发翘着。" },
+        { "speaker": "哥哥", "text": "姨——" }
+      ],
+      "choices": [
+        { "text": "\"哥——\"(也拖长腔)", "next": "c2_03a_cb", "changes": { "val": 4, "set": { "geDu": 2 }, "unlockAchievement": "ach_long_tone" } },
+        { "text": "\"起床了。\"", "next": "c2_03b_cb", "changes": { "val": 1, "set": { "geDu": 1 } } },
+        { "text": "走过去揉他头发", "next": "c2_03c_cb", "changes": { "val": 3, "set": { "geDu": 2 } } }
+      ]
+    },
+    "c2_03a_cb": {
+      "title": "拖长腔",
+      "progress": 30,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "speaker": "你", "text": "哥——" },
+        { "text": "你把尾音也往下掉。" },
+        { "text": "哥哥从被窝里露出半张脸,冲你笑了一下,又把脑袋缩回去。" }
+      ],
+      "next": "c2_04"
+    },
+    "c2_03b_cb": {
+      "title": "起床",
+      "progress": 30,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "speaker": "你", "text": "起床了。" },
+        { "speaker": "哥哥", "text": "嗯——" },
+        { "text": "他没起。" }
+      ],
+      "next": "c2_04"
+    },
+    "c2_03c_cb": {
+      "title": "揉头",
+      "progress": 30,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "text": "你伸手去揉他翘起来的那撮头发。" },
+        { "text": "哥哥往被子里又缩了一寸。" },
+        { "speaker": "哥哥", "text": "姨,我再睡一会儿。" }
+      ],
+      "next": "c2_04"
+    },
+    "c2_04": {
+      "title": "妹妹",
+      "progress": 32,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "text": "妹妹在另一张床上,蹦——蹦——蹦——。" },
+        { "text": "她看见你之后蹦得更高。" },
+        { "speaker": "妹妹", "text": "姨!姨!姨!" },
+        { "text": "她朝你扑过来。" }
+      ],
+      "choices": [
+        { "text": "接住她转一圈", "next": "c2_04a_cb", "changes": { "val": 6, "set": { "meiWei": 3 }, "addFlag": "jumpedWithSister", "unlockAchievement": "ach_catch_meimei" } },
+        { "text": "接住,稳稳放下", "next": "c2_04b_cb", "changes": { "val": 3, "set": { "meiWei": 2 } } }
+      ]
+    },
+    "c2_04a_cb": {
+      "title": "转一圈",
+      "progress": 34,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "text": "你接住她,顺势在原地转了一圈。" },
+        { "speaker": "妹妹", "text": "再来一次!再来一次!" },
+        { "speaker": "姐姐", "text": "别转了别转了她马上要吐了。" },
+        { "text": "你姐的声音从厨房飞过来。" }
+      ],
+      "next": "c2_05"
+    },
+    "c2_04b_cb": {
+      "title": "放下",
+      "progress": 34,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "text": "你接住她,把她稳稳放回床上。" },
+        { "text": "她瞪你一眼,又开始蹦。" }
+      ],
+      "next": "c2_05"
+    },
+    "c2_05": {
+      "title": "八分",
+      "progress": 36,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "text": "你姐把碗放下,擦着手走过来,在卧室门口站住。" },
+        { "speaker": "姐姐", "text": "你猜这丫头上礼拜数学考多少。" },
+        { "text": "她抬下巴朝床上点了一下。" },
+        { "speaker": "姐姐", "text": "八分。整张卷子,八分。" }
+      ],
+      "choices": [
+        { "text": "\"......不会吧。\"", "next": "c2_05a_cb", "changes": { "val": 2 } },
+        { "text": "\"妹妹好淡定啊。\"", "next": "c2_05b_cb", "changes": { "val": 3, "set": { "meiWei": 1 } } },
+        { "text": "\"姐你别说了。\"", "next": "c2_05c_cb", "changes": { "val": 0, "addFlag": "tryStop1" } }
+      ]
+    },
+    "c2_05a_cb": {
+      "title": "不会吧",
+      "progress": 38,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "speaker": "你", "text": "......不会吧。" },
+        { "speaker": "姐姐", "text": "你不信你问她。" },
+        { "speaker": "姐姐", "text": "选择题四个答案,蒙都能蒙二十五分,她考八分。她是怎么做到的我一直没想明白。" }
+      ],
+      "next": "c2_06"
+    },
+    "c2_05b_cb": {
+      "title": "淡定",
+      "progress": 38,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "speaker": "你", "text": "妹妹好淡定啊。" },
+        { "text": "床上那位还在蹦,完全没停。" },
+        { "speaker": "妹妹", "text": "因为我没考十分,我没考十分,我没考十分!" },
+        { "text": "你扶了一下眼镜。" }
+      ],
+      "next": "c2_06"
+    },
+    "c2_05c_cb": {
+      "title": "别说了",
+      "progress": 38,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "speaker": "你", "text": "姐你别说了。" },
+        { "speaker": "姐姐", "text": "我不说怎么行,我不说她自己都不知道。" },
+        { "speaker": "姐姐", "text": "你听我跟你说——" }
+      ],
+      "next": "c2_06"
+    },
+    "c2_06": {
+      "title": "老师认识她",
+      "progress": 40,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "speaker": "姐姐", "text": "我上礼拜去开家长会,你猜她们老师怎么跟我说。" },
+        { "text": "你姐这一句完全没等你回答,直接往下接。" },
+        { "speaker": "姐姐", "text": "她们老师说,这一年级我别的孩子还在记呢,你们家这个我第一个就认住了——倒着第一个!" },
+        { "speaker": "姐姐", "text": "正着排不上号,倒着张口就来。" }
+      ],
+      "choices": [
+        { "text": "\"那也算稳定。\"", "next": "c2_06a_cb", "changes": { "val": 4, "addFlag": "joinedRoast", "unlockAchievement": "ach_roast_partner" } },
+        { "text": "\"姐你声音小点,妹妹听见。\"(她妹妹根本不在意)", "next": "c2_06b_cb", "changes": { "val": -1, "addFlag": "tryStop2" } },
+        { "text": "看了一眼蹦着的妹妹", "next": "c2_06c_cb", "changes": { "val": 2, "set": { "meiWei": 1 } } }
+      ]
+    },
+    "c2_06a_cb": {
+      "title": "稳定",
+      "progress": 42,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "speaker": "你", "text": "那也算稳定。" },
+        { "speaker": "姐姐", "text": "稳定个屁——" },
+        { "text": "你姐一拍大腿。但她没真生气,她笑出来了一下,又赶紧绷住。" },
+        { "speaker": "姐姐", "text": "你别教坏我女儿。" }
+      ],
+      "next": "c2_07"
+    },
+    "c2_06b_cb": {
+      "title": "声音小点",
+      "progress": 42,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "speaker": "你", "text": "姐你声音小点,妹妹听见。" },
+        { "text": "妹妹听见了。她转过头冲你比了个耶,然后继续蹦。" },
+        { "speaker": "姐姐", "text": "你看她在乎吗?她根本不在乎。" },
+        { "speaker": "姐姐", "text": "她有那个心思在乎,她早多考几分了。" }
+      ],
+      "next": "c2_07"
+    },
+    "c2_06c_cb": {
+      "title": "看妹妹",
+      "progress": 42,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "text": "你扭头看了一眼妹妹。" },
+        { "text": "她蹦得头发都飞起来,边蹦边唱一个没词的调子,曲调你听不出是哪首。" },
+        { "text": "她整个人像不知道八分是什么意思。" }
+      ],
+      "next": "c2_07"
+    },
+    "c2_07": {
+      "title": "请假",
+      "progress": 44,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "speaker": "姐姐", "text": "所以今天家长会我是去不了了。" },
+        { "speaker": "姐姐", "text": "你帮我去一下。" },
+        { "text": "她回头从沙发上拎包,头发甩了一下。" }
+      ],
+      "choices": [
+        { "text": "\"嗯,行。\"", "next": "c2_07a_cb", "changes": { "val": 2 } },
+        { "text": "\"姐!你这是把我当家长用啊。\"", "next": "c2_07b_cb", "changes": { "val": 4 } },
+        { "text": "\"...姐,我跟你说件事。\"", "next": "c2_07c_mention", "changes": { "val": 1, "set": { "mentioned": true } } }
+      ]
+    },
+    "c2_07a_cb": {
+      "title": "嗯行",
+      "progress": 46,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "speaker": "你", "text": "嗯,行。" },
+        { "speaker": "姐姐", "text": "就知道你行。" },
+        { "text": "她已经穿上外套了。" }
+      ],
+      "next": "c2_08"
+    },
+    "c2_07b_cb": {
+      "title": "当家长",
+      "progress": 46,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "speaker": "你", "text": "姐!你这是把我当家长用啊。" },
+        { "speaker": "姐姐", "text": "可不嘛,我女儿你外甥女,你不当谁当。" },
+        { "speaker": "姐姐", "text": "再说你又不亏,老师肯定认得你。" },
+        { "text": "你扶了一下额。" }
+      ],
+      "next": "c2_08",
+      "changes": { "set": { "facepalmCount": 1 } }
+    },
+    "c2_07c_mention": {
+      "title": "我跟你说件事",
+      "progress": 46,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "speaker": "你", "text": "...姐,我跟你说件事。" },
+        { "text": "你姐手里那个包停了半秒。" },
+        { "speaker": "姐姐", "text": "你说。" },
+        { "text": "你张了一下嘴。" },
+        { "speaker": "妹妹", "text": "姨!姨!你看我!你看我!" },
+        { "text": "妹妹从床上一跃,扑到你后腰。" },
+        { "speaker": "姐姐", "text": "诶诶诶下来下来——" },
+        { "text": "你姐已经从你这儿走开了,去把妹妹从你身上揪下来。" },
+        { "speaker": "系统", "text": "你刚才想说的话,等一会儿。" }
+      ],
+      "next": "c2_08"
+    },
+    "c2_08": {
+      "title": "走前",
+      "progress": 48,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "speaker": "姐姐", "text": "出发吧出发吧,再不出门赶不及。" },
+        { "text": "你姐已经在门口换鞋。" },
+        { "text": "妹妹被她爸接走上学(他在阳台后头你才看见),哥哥继续在被窝里。" }
+      ],
+      "choices": [
+        { "text": "回头看一眼小黄", "next": "c2_08a_cb", "changes": { "val": 2, "set": { "huangDu": 1 } } },
+        { "text": "跟着姐姐出门", "next": "c2_08b_cb", "changes": { "val": 0 } }
+      ]
+    },
+    "c2_08a_cb": {
+      "title": "回头",
+      "progress": 50,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "text": "你回头看了一眼。" },
+        { "text": "小黄已经跟到客厅门口,坐在那儿看你。" },
+        { "text": "你冲它做了个口型:乖。" },
+        { "text": "它歪了一下头。" }
+      ],
+      "next": "c3_01"
+    },
+    "c2_08b_cb": {
+      "title": "跟出去",
+      "progress": 50,
+      "scene": {
+        "id": "jia_inside",
+        "name": "你姐家"
+      },
+      "segments": [
+        { "text": "你跟着你姐往门口走。" },
+        { "text": "你听见小黄在你身后小跑了两步,又停下。" }
+      ],
+      "next": "c3_01"
+    },
+    "c3_01": {
+      "chapterTitle": "第三章 · 路上",
+      "title": "小黄送行",
+      "progress": 52,
+      "scene": {
+        "id": "out_road",
+        "name": "巷子里",
+        "type": "major",
+        "description": "晨光斜着切进巷子,豆浆摊老板正在揭盖子,白汽撞到墙上又拐回来。",
+        "arrival": "你跟姐姐出了院门。"
+      },
+      "segments": [
+        { "text": "小黄趴在院门内侧看你们走。" },
+        { "text": "它没追出来——它知道你只是出去一会儿,它认得这套节奏。" },
+        { "speaker": "系统", "text": "今天它没扑别人。它只扑了你。" }
+      ],
+      "next": "c3_02"
+    },
+    "c3_02": {
+      "title": "你姐又开始了",
+      "progress": 55,
+      "scene": {
+        "id": "out_road",
+        "name": "巷子里"
+      },
+      "segments": [
+        { "speaker": "姐姐", "text": "你说她这个成绩,将来可咋办。" },
+        { "text": "你姐边走边讲,语气根本不像在问。" },
+        { "speaker": "姐姐", "text": "三年级我都不愁,哥哥那个稳的,中等中等,饿不死。" },
+        { "speaker": "姐姐", "text": "我就愁那个一年级的——" }
+      ],
+      "choices": [
+        { "text": "\"将来还远着呢姐。\"", "next": "c3_02a_cb", "changes": { "val": 1 } },
+        { "text": "\"那您说她像谁。\"", "next": "c3_02b_cb", "changes": { "val": 4 } },
+        { "text": "\"......\"(笑)", "next": "c3_02c_cb", "changes": { "val": 5, "addFlag": "laughedOut", "unlockAchievement": "ach_laughed_out" } }
+      ]
+    },
+    "c3_02a_cb": {
+      "title": "远着呢",
+      "progress": 57,
+      "scene": {
+        "id": "out_road",
+        "name": "巷子里"
+      },
+      "segments": [
+        { "speaker": "你", "text": "将来还远着呢姐。" },
+        { "speaker": "姐姐", "text": "远什么远,一年级到三年级就是眨眼。" },
+        { "speaker": "姐姐", "text": "我跟你说我那时候——" },
+        { "text": "她已经开始讲她自己小时候了。" }
+      ],
+      "next": "c3_03"
+    },
+    "c3_02b_cb": {
+      "title": "像谁",
+      "progress": 57,
+      "scene": {
+        "id": "out_road",
+        "name": "巷子里"
+      },
+      "segments": [
+        { "speaker": "你", "text": "那您说她像谁。" },
+        { "speaker": "姐姐", "text": "......" },
+        { "speaker": "姐姐", "text": "我不像,你也不像,咱妈更不像。" },
+        { "speaker": "姐姐", "text": "我估计是基因跳了一辈。" },
+        { "text": "你笑了一下。" }
+      ],
+      "next": "c3_03",
+      "changes": { "set": { "facepalmCount": 2 } }
+    },
+    "c3_02c_cb": {
+      "title": "笑",
+      "progress": 57,
+      "scene": {
+        "id": "out_road",
+        "name": "巷子里"
+      },
+      "segments": [
+        { "text": "你没说话,你笑了。" },
+        { "text": "你笑得有点没收住,扶了一下眼镜。" },
+        { "speaker": "姐姐", "text": "你笑什么你,你也是当姨的人了。" },
+        { "speaker": "姐姐", "text": "你这外甥女,你不教谁教。" }
+      ],
+      "next": "c3_03"
+    },
+    "c3_03": {
+      "title": "上周那次",
+      "progress": 60,
+      "scene": {
+        "id": "out_road",
+        "name": "巷子里"
+      },
+      "segments": [
+        { "speaker": "姐姐", "text": "上礼拜五学校开秋季运动会。" },
+        { "speaker": "姐姐", "text": "她跑五十米。" },
+        { "speaker": "姐姐", "text": "她跑到一半发现鞋带散了,蹲下来系鞋带——你信吗,她蹲在跑道中间系鞋带,后面的小孩绕着她跑过去!" },
+        { "speaker": "姐姐", "text": "她系完站起来还冲我招手!" }
+      ],
+      "choices": [
+        { "text": "\"哈哈哈哈——\"", "next": "c3_03a_cb", "changes": { "val": 4, "addFlag": "laughedOut", "unlockAchievement": "ach_laughed_out" } },
+        { "text": "\"...她那一刻在想什么。\"", "next": "c3_03b_cb", "changes": { "val": 3 } }
+      ]
+    },
+    "c3_03a_cb": {
+      "title": "笑出声",
+      "progress": 62,
+      "scene": {
+        "id": "out_road",
+        "name": "巷子里"
+      },
+      "segments": [
+        { "text": "你这次没憋住,直接笑出声。" },
+        { "speaker": "姐姐", "text": "你别笑了你别笑了。" },
+        { "speaker": "姐姐", "text": "我那天站在终点,我都不知道该跑过去抱她还是该假装我不认识她。" }
+      ],
+      "next": "c3_04"
+    },
+    "c3_03b_cb": {
+      "title": "她在想什么",
+      "progress": 62,
+      "scene": {
+        "id": "out_road",
+        "name": "巷子里"
+      },
+      "segments": [
+        { "speaker": "你", "text": "...她那一刻在想什么。" },
+        { "speaker": "姐姐", "text": "你问我我问谁啊,我又不是她肚子里的虫。" },
+        { "speaker": "姐姐", "text": "她那一刻肯定觉得鞋带比第几名重要。" }
+      ],
+      "next": "c3_04",
+      "changes": { "set": { "facepalmCount": 3 } }
+    },
+    "c3_04": {
+      "title": "学校门口",
+      "progress": 66,
+      "scene": {
+        "id": "school_gate",
+        "name": "学校门口",
+        "type": "major",
+        "description": "栏杆外停着一排电动车,栏杆里小孩们正在做早操,广播是失真的。",
+        "arrival": "你们走到了学校门口。"
+      },
+      "segments": [
+        { "text": "你姐慢下来了。" },
+        { "text": "她原本走得飞快,这一会儿,在校门口的栏杆前面,她停了。" }
+      ],
+      "next": "c4_01"
+    },
+    "c4_01": {
+      "chapterTitle": "第四章 · 你选哪个",
+      "title": "停下",
+      "progress": 70,
+      "scene": {
+        "id": "school_gate",
+        "name": "学校门口"
+      },
+      "segments": [
+        { "speaker": "姐姐", "text": "对了——" },
+        { "text": "你以为她要交代家长会怎么开。" },
+        { "text": "你以为她要给你两个孩子班级在几楼。" }
+      ],
+      "next": "c4_02"
+    },
+    "c4_02": {
+      "title": "那个问题",
+      "progress": 73,
+      "scene": {
+        "id": "school_gate",
+        "name": "学校门口"
+      },
+      "segments": [
+        { "speaker": "姐姐", "text": "哥哥三年级,妹妹一年级——" },
+        { "text": "她说一半停了一下,转过来看你。" },
+        { "speaker": "姐姐", "text": "你选哪个。" }
+      ],
+      "next": "c4_03"
+    },
+    "c4_03": {
+      "title": "啊",
+      "progress": 76,
+      "scene": {
+        "id": "school_gate",
+        "name": "学校门口"
+      },
+      "segments": [
+        { "speaker": "你", "text": "......啊?" },
+        { "speaker": "姐姐", "text": "两个家长会同一个钟头开,一个三楼一个一楼,你只能去一个。" },
+        { "speaker": "姐姐", "text": "你看你顺哪个。" },
+        { "text": "她说得特别理所当然。" }
+      ],
+      "next": "c4_04"
+    },
+    "c4_04": {
+      "title": "你",
+      "progress": 80,
+      "scene": {
+        "id": "school_gate",
+        "name": "学校门口"
+      },
+      "segments": [
+        { "text": "你愣了一下。" },
+        { "text": "你想起哥哥的拖长腔。" },
+        { "text": "你想起妹妹蹲在跑道中间系鞋带。" },
+        { "text": "你想起小黄趴在院门里看你走。" },
+        { "text": "你低头扶了一下额。" }
+      ],
+      "choices": [
+        { "text": "\"......那我去妹妹班。\"(笑着说)", "next": "route_meimei", "changes": { "val": 5, "importantFlag": { "flag": "chose_meimei", "label": "选了妹妹班" } } },
+        { "text": "\"那我去哥哥班吧。\"", "next": "route_gege", "changes": { "val": 2, "importantFlag": { "flag": "chose_gege", "label": "选了哥哥班" } } },
+        { "text": "\"那您选哪个。\"", "next": "closure_reverse", "changes": { "val": 3, "importantFlag": { "flag": "reversed", "label": "把问题踢回去" }, "unlockAchievement": "ach_reverse_q" } },
+        { "text": "\"...姐,我跟你说件事。\"", "condition": "hasFlag 'mentioned'", "next": "closure_hidden", "changes": { "importantFlag": { "flag": "speak_now", "label": "你想说那件事" }, "unlockAchievement": "ach_unspoken" } },
+        { "text": "\"......那您自己挑吧,我先回。\"", "next": "closure_polite", "changes": { "val": -8, "importantFlag": { "flag": "left", "label": "你先走了" }, "unlockAchievement": "ach_polite" } }
+      ]
+    },
+    "route_meimei": {
+      "title": "妹妹班",
+      "progress": 85,
+      "scene": {
+        "id": "school_gate",
+        "name": "学校门口"
+      },
+      "segments": [
+        { "text": "你说完这句话,自己先笑了。" }
+      ],
+      "routes": [
+        { "condition": "hasFlag 'mentioned'", "next": "closure_hidden" },
+        { "condition": "default", "next": "closure_meimei" }
+      ]
+    },
+    "route_gege": {
+      "title": "哥哥班",
+      "progress": 85,
+      "scene": {
+        "id": "school_gate",
+        "name": "学校门口"
+      },
+      "segments": [
+        { "text": "你说出口才发现,你今天早上唯一一句没拖长腔的话,是给哥哥那一句。" }
+      ],
+      "next": "closure_gege"
+    },
+    "closure_meimei": {
+      "title": "再见",
+      "progress": 92,
+      "scene": {
+        "id": "school_gate",
+        "name": "学校门口"
+      },
+      "segments": [
+        { "speaker": "姐姐", "text": "那行,你去妹妹班,我现在打车去机场。" },
+        { "speaker": "姐姐", "text": "回头给老师说,她妈出差,她姨来。" },
+        { "text": "你姐已经把行李箱拉到栏杆边上,招手叫车。" },
+        { "speaker": "姐姐", "text": "她要是说她那个鞋带的事——你帮她兜着点。" },
+        { "text": "你点头。" },
+        { "text": "你姐上了车,关门,车开走。" },
+        { "text": "你站在校门口,听着栏杆里失真的广播,扶了一下眼镜。" }
+      ],
+      "next": "ending_true"
+    },
+    "closure_gege": {
+      "title": "三楼",
+      "progress": 92,
+      "scene": {
+        "id": "school_gate",
+        "name": "学校门口"
+      },
+      "segments": [
+        { "speaker": "姐姐", "text": "你去哥哥班?" },
+        { "speaker": "姐姐", "text": "......行吧,反正哥哥也没啥说的,老师就那几句,踏实、稳定、再接再厉。" },
+        { "speaker": "姐姐", "text": "那妹妹这边——回头她要是回家闹,我跟她说她姨偏心。" },
+        { "text": "你姐笑了一下。" },
+        { "text": "她拉着行李箱走向路边。" },
+        { "text": "你看着她背影,自己心里也说不上来。" }
+      ],
+      "next": "ending_gege"
+    },
+    "closure_reverse": {
+      "title": "您选哪个",
+      "progress": 92,
+      "scene": {
+        "id": "school_gate",
+        "name": "学校门口"
+      },
+      "segments": [
+        { "speaker": "你", "text": "那您选哪个。" },
+        { "text": "你姐愣了半秒。" },
+        { "text": "就半秒。" },
+        { "speaker": "姐姐", "text": "我?我要选我能让你来吗?" },
+        { "speaker": "姐姐", "text": "你说她吧,八分;你说他吧,中等。" },
+        { "speaker": "姐姐", "text": "我哪个都不忍心去。" },
+        { "text": "她说着说着又笑出来。" },
+        { "text": "你也笑。你俩在校门口笑了大概十秒。" }
+      ],
+      "next": "ending_reverse"
+    },
+    "closure_polite": {
+      "title": "我先回",
+      "progress": 92,
+      "scene": {
+        "id": "school_gate",
+        "name": "学校门口"
+      },
+      "segments": [
+        { "speaker": "你", "text": "......姐,那您自己挑吧。" },
+        { "speaker": "你", "text": "我先回了。" },
+        { "text": "你姐看了你一眼。" },
+        { "speaker": "姐姐", "text": "......行。" },
+        { "speaker": "姐姐", "text": "那我回去把哥哥踹起来,自己跑一趟。" },
+        { "text": "她没多说什么。" },
+        { "text": "你掉头走的时候,听见小黄在远远的院子里叫了一声。" },
+        { "text": "你没回头。" }
+      ],
+      "next": "ending_polite"
+    },
+    "closure_hidden": {
+      "title": "那件事",
+      "progress": 92,
+      "scene": {
+        "id": "school_gate",
+        "name": "学校门口"
+      },
+      "segments": [
+        { "speaker": "你", "text": "......姐,我跟你说件事。" },
+        { "text": "你姐这次站住了。" },
+        { "text": "她把行李箱放下,转过来,看着你。" },
+        { "speaker": "姐姐", "text": "你说。" },
+        { "text": "你张了一下嘴。" },
+        { "text": "栏杆里那个失真的广播刚好放完早操音乐,操场上小孩在喊一二三四。" },
+        { "text": "你想起小黄趴在院门里的样子。" },
+        { "text": "你想起哥哥裹被子的样子。" },
+        { "text": "你想起妹妹蹲在跑道中间系鞋带。" },
+        { "text": "你把那句话又咽了回去。" },
+        { "speaker": "你", "text": "......那我去妹妹班吧。" },
+        { "text": "你姐没追问。" },
+        { "text": "她也许知道,也许没听见,也许装作没听见。" },
+        { "text": "她拉起行李箱,挥手叫车。" }
+      ],
+      "next": "ending_hidden"
+    },
+    "ending_true": {
+      "isEnding": true,
+      "title": "那我去妹妹班",
+      "type": "TRUE ENDING",
+      "progress": 100,
+      "achievement": "ach_true_ending",
+      "description": "你站在一年级一班门口的时候,老师正在挨个点名,点到你外甥女那个名字,老师停了一下,从眼镜上面看过来,看你。你笑了笑。你说,她妈出差,她姨来。老师哦了一声,点了点头,继续点名。她在你身后趴在你后腰,你能感觉到她两只小手在你裤子后兜里摸。",
+      "closing": "你来这家这么多回,没一回是空着手出去的。今天揣了个老师都认识的孩子,回家。",
+      "effect": "breath"
+    },
+    "ending_gege": {
+      "isEnding": true,
+      "title": "那我去哥哥班",
+      "type": "NORMAL ENDING",
+      "progress": 100,
+      "description": "你坐在三年级二班的家长椅上。椅子小得你只能斜着坐。前面那个老师讲了二十分钟,讲的全是平均分、班级排名、需要督促。讲完了你站起来,跟老师握了手,说回去督促。回去的路上,你给你姐发了一句,'哥哥那边老师没什么意思'。你姐过了五分钟才回:那妹妹班呢?你看着这句话,扶了一下眼镜。",
+      "closing": "哥哥拉长腔说嗨——的那个早晨,你拉长腔答应了他。你没去他的家长会的话,你大概会一直记得那句嗨。",
+      "effect": "breath"
+    },
+    "ending_reverse": {
+      "isEnding": true,
+      "title": "那您选哪个",
+      "type": "BRANCH ENDING",
+      "progress": 100,
+      "description": "你姐最后还是没选。她说算了算了我打车回去把他俩都揪起来,反正哥哥也能自己写检讨。她还真打车回去了。你站在校门口,看她车开走,然后你掏出手机,给老师发了条短信:她妈临时家里有事,我们今天家长会请假。老师秒回:好的,平时多督促。你笑了一下,把手机塞回兜里。",
+      "closing": "你把问题踢了回去。这家的姐妹俩,从来都是这么过日子的。",
+      "effect": "breath"
+    },
+    "ending_polite": {
+      "isEnding": true,
+      "title": "客气的距离",
+      "type": "BRANCH ENDING",
+      "progress": 100,
+      "description": "你掉头往巷子里走。早晨的人流已经稀了。豆浆摊老板冲你喊,姑娘吃不吃?你摇头。你走到自己车边,蹬开车撑,坐上去。你蹬了一脚,又一脚。风把你头发吹起来。你姐没追出来,小黄也没。",
+      "closing": "你今天还是没成为那个'家长'。你回家路上路过一家面馆,你进去坐下,点了一碗面。你吃得很慢。",
+      "effect": "breath"
+    },
+    "ending_hidden": {
+      "isEnding": true,
+      "title": "没说出口",
+      "type": "HIDDEN ENDING",
+      "progress": 100,
+      "ambient": "wind",
+      "description": "你站在一年级一班门口。老师点到你外甥女的名字,你说,她妈出差,她姨来。妹妹趴在你后腰,把脸埋在你校服后摆里。你忽然意识到,你今天早上想说的那件事,不是辞掉这个'姨'的身份,也不是别的什么大事——你只是想跟你姐说,你最近其实有点累。你没说。今天你没说。明天你大概也不会说。",
+      "closing": "你本来要说的那句话,被姐姐打断了三次,被妹妹打断了一次,被你自己咽下去了一次。然后你笑出来,就再没说出口。",
+      "effect": "breath"
+    }
+  }
+}

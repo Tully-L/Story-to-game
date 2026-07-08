@@ -1,0 +1,897 @@
+{
+  "meta": {
+    "title": "清场",
+    "author": "改编自生活素材",
+    "version": "1.0.0",
+    "description": "你从北京飞回学校,只是为了开一场答辩。曾经那个等你出站的朋友变得冷漠了,曾经热闹的校园也空下来了。你以为你会失落,但你发现这是你这四年第一次,把这个地方留给了自己。",
+    "theme": "paper",
+    "ambient": "wind",
+    "cover": {
+      "label": "回学校的那一周",
+      "tagline": "原来空荡荡也是一种好。"
+    },
+    "variableName": "清场",
+    "initialVariable": 40
+  },
+  "startNodeId": "c1_01",
+  "variables": {
+    "friendDistance": 0,
+    "selfRoom": 0,
+    "facepalmCount": 0,
+    "saidGoodbye": false
+  },
+  "achievements": {
+    "ach_quiet_seat": {
+      "title": "靠窗的人",
+      "description": "你选了靠窗,没人坐你旁边。"
+    },
+    "ach_no_message": {
+      "title": "没发那条消息",
+      "description": "你想跟旧友说今天回去,你没发。"
+    },
+    "ach_walked_old_path": {
+      "title": "原路走一遍",
+      "description": "你绕了一段没必要走的路。"
+    },
+    "ach_truth_to_friend": {
+      "title": "问出口了",
+      "description": "你直接问了:你是不是不太一样了。"
+    },
+    "ach_didnt_ask": {
+      "title": "没问",
+      "description": "你忍住了那句问话。"
+    },
+    "ach_eat_alone": {
+      "title": "一个人那一顿",
+      "description": "你在食堂找了个最角落的位置。"
+    },
+    "ach_empty_dorm": {
+      "title": "宿舍空了",
+      "description": "六张床只有你一张。"
+    },
+    "ach_calm_defense": {
+      "title": "稳住了",
+      "description": "答辩中老师追问,你没乱。"
+    },
+    "ach_alone_after": {
+      "title": "答辩结束往学校外走",
+      "description": "你没回头。"
+    },
+    "ach_clearing": {
+      "title": "清场",
+      "description": "你拿走的是一段属于自己的空。"
+    },
+    "ach_grown_up": {
+      "title": "都长大了",
+      "description": "你发现冷漠的不是他一个人。"
+    }
+  },
+  "nodes": {
+    "c1_01": {
+      "chapterTitle": "第一章 · 在天上",
+      "title": "首都机场 T3",
+      "progress": 2,
+      "scene": {
+        "id": "beijing_airport",
+        "name": "首都机场",
+        "type": "major",
+        "description": "T3 航站楼的早晨,广播放着登机口变更,人少。",
+        "arrival": "你拖着一个登机箱站在登机口前。"
+      },
+      "segments": [
+        { "text": "星期三,早上九点。" },
+        { "text": "你拖着登机箱,书包里装着答辩 PPT,手机一直 99+。" },
+        { "speaker": "系统", "text": "你回学校,是为了下午的答辩。" },
+        { "text": "登机口开始检票。" }
+      ],
+      "choices": [
+        { "text": "走靠窗那一边", "next": "c1_02a_cb", "changes": { "val": 4, "set": { "selfRoom": 1 }, "unlockAchievement": "ach_quiet_seat" } },
+        { "text": "靠走道,方便下飞机", "next": "c1_02b_cb", "changes": { "val": 0 } }
+      ]
+    },
+    "c1_02a_cb": {
+      "title": "靠窗",
+      "progress": 4,
+      "scene": {
+        "id": "plane",
+        "name": "舱内",
+        "type": "major",
+        "description": "舱顶灯还没全开。靠窗的位置整排没人。",
+        "arrival": "你坐下,把书包塞到前排座椅下面。"
+      },
+      "segments": [
+        { "text": "你坐下来,顺手把书包塞到前排座椅下。" },
+        { "text": "你旁边那两个位子,一直到关舱门都是空的。" }
+      ],
+      "next": "c1_03"
+    },
+    "c1_02b_cb": {
+      "title": "靠道",
+      "progress": 4,
+      "scene": {
+        "id": "plane",
+        "name": "舱内",
+        "type": "major",
+        "description": "舱顶灯还没全开。窄过道里有人在收行李。",
+        "arrival": "你坐下,把书包塞到前排座椅下面。"
+      },
+      "segments": [
+        { "text": "你坐下来,后面那位大叔一直拿不准他的箱子要不要放头顶。" },
+        { "text": "你帮他抬了一下。他说了三遍谢谢。" }
+      ],
+      "next": "c1_03"
+    },
+    "c1_03": {
+      "title": "起飞",
+      "progress": 7,
+      "scene": {
+        "id": "plane",
+        "name": "舱内"
+      },
+      "segments": [
+        { "text": "飞机滑出跑道,机身震一下,推出去。" },
+        { "text": "北京从舷窗下沉下去——先是机场的灰色,再是六环外的农田,然后云盖上来。" }
+      ],
+      "next": "c1_04"
+    },
+    "c1_04": {
+      "title": "云上",
+      "progress": 10,
+      "scene": {
+        "id": "plane",
+        "name": "舱内"
+      },
+      "segments": [
+        { "text": "云面很平。" },
+        { "text": "你拿出手机,手机里有他半年前给你发的最后一条消息,还停在'好'。" },
+        { "speaker": "系统", "text": "你今天回学校。要不要告诉他。" }
+      ],
+      "choices": [
+        { "text": "打字:我今天回学校", "next": "c1_05a_cb", "changes": { "val": 0, "set": { "friendDistance": -1 } } },
+        { "text": "划掉,放下手机", "next": "c1_05b_cb", "changes": { "val": 3, "set": { "selfRoom": 1 }, "unlockAchievement": "ach_no_message" } }
+      ]
+    },
+    "c1_05a_cb": {
+      "title": "发了",
+      "progress": 13,
+      "scene": {
+        "id": "plane",
+        "name": "舱内"
+      },
+      "segments": [
+        { "text": "你输了一句:我今天回学校。" },
+        { "text": "你看着那句话看了大概一分钟,按了发送。" },
+        { "text": "三个点跳了一下,又消失了。" },
+        { "speaker": "系统", "text": "没有回。" }
+      ],
+      "next": "c1_06"
+    },
+    "c1_05b_cb": {
+      "title": "划掉",
+      "progress": 13,
+      "scene": {
+        "id": "plane",
+        "name": "舱内"
+      },
+      "segments": [
+        { "text": "你输了一半,把那行字全删了。" },
+        { "text": "你把手机扣过来,放在小桌板上。" },
+        { "text": "云面继续往后退。" }
+      ],
+      "next": "c1_06"
+    },
+    "c1_06": {
+      "title": "翻 PPT",
+      "progress": 16,
+      "scene": {
+        "id": "plane",
+        "name": "舱内"
+      },
+      "segments": [
+        { "text": "你打开 iPad,把答辩 PPT 又翻了一遍。" },
+        { "text": "第 17 页那张图你想换很久了。" }
+      ],
+      "choices": [
+        { "text": "换", "next": "c1_06a_cb", "changes": { "val": 2 } },
+        { "text": "算了,就这样", "next": "c1_06b_cb", "changes": { "val": 1 } }
+      ]
+    },
+    "c1_06a_cb": {
+      "title": "换图",
+      "progress": 19,
+      "scene": {
+        "id": "plane",
+        "name": "舱内"
+      },
+      "segments": [
+        { "text": "你从素材库里挑了一张新的。" },
+        { "text": "换完之后你看了一眼整个 PPT,觉得这张也没多好。" },
+        { "text": "你算了,你存档。" }
+      ],
+      "next": "c1_07"
+    },
+    "c1_06b_cb": {
+      "title": "不换",
+      "progress": 19,
+      "scene": {
+        "id": "plane",
+        "name": "舱内"
+      },
+      "segments": [
+        { "text": "你把 iPad 合上。" },
+        { "text": "其实答辩从来不是图好不好的问题。" }
+      ],
+      "next": "c1_07"
+    },
+    "c1_07": {
+      "title": "降落",
+      "progress": 22,
+      "scene": {
+        "id": "plane",
+        "name": "舱内"
+      },
+      "segments": [
+        { "text": "广播开始念落地天气。" },
+        { "text": "云盖往下沉,机翼下面是学校所在的那座城。" },
+        { "text": "机轮咯哒响了一下,落地。" }
+      ],
+      "next": "c2_01"
+    },
+    "c2_01": {
+      "chapterTitle": "第二章 · 落地",
+      "title": "出站",
+      "progress": 26,
+      "scene": {
+        "id": "city_arrival",
+        "name": "南方某城",
+        "type": "major",
+        "description": "出站口外是熟悉的湿气,这座城刚下过雨,地面还没干。",
+        "arrival": "你拖着箱子从出站口出来。"
+      },
+      "segments": [
+        { "text": "出站口的空气是潮的,跟北京完全不一样。" },
+        { "text": "你拿出手机叫车。" }
+      ],
+      "next": "c2_02"
+    },
+    "c2_02": {
+      "title": "回学校",
+      "progress": 29,
+      "scene": {
+        "id": "taxi",
+        "name": "出租车里",
+        "type": "transient",
+        "description": "司机开了点窗。"
+      },
+      "segments": [
+        { "speaker": "司机", "text": "去学校啊?是不是要毕业了。" },
+        { "speaker": "你", "text": "嗯。回来答辩。" },
+        { "speaker": "司机", "text": "答辩,那大事啊。" },
+        { "text": "他没再说话。" }
+      ],
+      "next": "c2_03"
+    },
+    "c2_03": {
+      "title": "进校门",
+      "progress": 32,
+      "scene": {
+        "id": "campus_gate",
+        "name": "校门口",
+        "type": "major",
+        "description": "南门那块石头还在,字被新刷过一遍。值班保安换人了。",
+        "arrival": "你拖着箱子下车。"
+      },
+      "segments": [
+        { "text": "你站在校门口看了一会儿。" },
+        { "text": "门口那块石头你刚来的时候在它前面拍过照。今天它身后没人。" }
+      ],
+      "choices": [
+        { "text": "直接去宿舍", "next": "c2_04a_cb", "changes": { "val": 1 } },
+        { "text": "绕路,走以前常走的那条", "next": "c2_04b_cb", "changes": { "val": 4, "set": { "selfRoom": 1 }, "unlockAchievement": "ach_walked_old_path" } },
+        { "text": "先去答辩教学楼看一眼", "next": "c2_04c_cb", "changes": { "val": 2 } }
+      ]
+    },
+    "c2_04a_cb": {
+      "title": "宿舍方向",
+      "progress": 35,
+      "scene": {
+        "id": "campus_road",
+        "name": "校园里",
+        "type": "major",
+        "description": "下午两点,树荫斑驳。",
+        "arrival": "你顺着主干道往南走。"
+      },
+      "segments": [
+        { "text": "你顺着主干道,把箱子轮拖得噔噔响。" },
+        { "text": "迎面来的几个学弟妹没看你,你也没看他们。" }
+      ],
+      "next": "c2_05"
+    },
+    "c2_04b_cb": {
+      "title": "老路",
+      "progress": 35,
+      "scene": {
+        "id": "campus_road",
+        "name": "校园里",
+        "type": "major",
+        "description": "下午两点,树荫斑驳。",
+        "arrival": "你拐进了一条小路。"
+      },
+      "segments": [
+        { "text": "你拐进了那条小路。" },
+        { "text": "大三那年你跟他每天走这条路去图书馆。路边的栀子花是新栽的,以前是别的什么。" },
+        { "text": "你慢慢走了一段。" }
+      ],
+      "next": "c2_05"
+    },
+    "c2_04c_cb": {
+      "title": "教学楼",
+      "progress": 35,
+      "scene": {
+        "id": "academic_building",
+        "name": "教学楼外",
+        "type": "major",
+        "description": "外墙刚翻新过,玻璃门反着光。",
+        "arrival": "你站在教学楼前。"
+      },
+      "segments": [
+        { "text": "你抬头看了一眼那栋楼。" },
+        { "text": "明天就是在这里。三楼,302。" },
+        { "text": "你拍了拍登机箱,继续走。" }
+      ],
+      "next": "c2_05"
+    },
+    "c2_05": {
+      "title": "他",
+      "progress": 38,
+      "scene": {
+        "id": "campus_road",
+        "name": "校园里"
+      },
+      "segments": [
+        { "text": "手机震了一下。" },
+        { "speaker": "旧友", "text": "听说你回来了?" },
+        { "speaker": "旧友", "text": "晚上一起吃饭。" },
+        { "text": "你看着屏幕。" }
+      ],
+      "choices": [
+        { "text": "\"好。\"", "next": "c2_06a_cb", "changes": { "val": 0 } },
+        { "text": "\"今天有点累,改天。\"", "next": "c2_06b_cb", "changes": { "val": 3, "set": { "selfRoom": 1 } } },
+        { "text": "\"......\"(过了半分钟才回:好)", "next": "c2_06c_cb", "changes": { "val": 1 } }
+      ]
+    },
+    "c2_06a_cb": {
+      "title": "好",
+      "progress": 41,
+      "scene": {
+        "id": "campus_road",
+        "name": "校园里"
+      },
+      "segments": [
+        { "text": "你回了个'好'。" },
+        { "text": "他秒回:六点,北门那家店,以前那家。" },
+        { "text": "你说嗯。" }
+      ],
+      "next": "c2_07"
+    },
+    "c2_06b_cb": {
+      "title": "改天",
+      "progress": 41,
+      "scene": {
+        "id": "campus_road",
+        "name": "校园里"
+      },
+      "segments": [
+        { "text": "你回:今天有点累,改天。" },
+        { "text": "三个点跳了三下,又停了。" },
+        { "text": "他最后回:好。" }
+      ],
+      "next": "c3_01"
+    },
+    "c2_06c_cb": {
+      "title": "迟了半分钟",
+      "progress": 41,
+      "scene": {
+        "id": "campus_road",
+        "name": "校园里"
+      },
+      "segments": [
+        { "text": "你看了半分钟那个对话框。" },
+        { "text": "最后还是回了'好'。" },
+        { "text": "他没再说什么。" }
+      ],
+      "next": "c2_07"
+    },
+    "c2_07": {
+      "title": "北门那家",
+      "progress": 45,
+      "scene": {
+        "id": "old_restaurant",
+        "name": "北门小馆",
+        "type": "major",
+        "description": "店没变,人坐少了一半。墙上还是那张菜单,加了几个新菜。",
+        "arrival": "你比他先到。"
+      },
+      "segments": [
+        { "text": "他来的时候,先点头,后坐下。" },
+        { "text": "他比你记得的瘦了一点,眼神比你记得的远了一点。" },
+        { "speaker": "旧友", "text": "好久不见。" },
+        { "speaker": "你", "text": "嗯。" }
+      ],
+      "next": "c2_08"
+    },
+    "c2_08": {
+      "title": "聊",
+      "progress": 48,
+      "scene": {
+        "id": "old_restaurant",
+        "name": "北门小馆"
+      },
+      "segments": [
+        { "text": "你问他工作怎么样。他说挺好。" },
+        { "text": "你问他还住原来那儿吗。他说搬了。" },
+        { "text": "他没问你。" },
+        { "text": "汤上来,你们各喝各的。" }
+      ],
+      "choices": [
+        { "text": "不点破,继续吃", "next": "c2_09a_cb", "changes": { "val": 2, "set": { "friendDistance": 1, "selfRoom": 1 }, "unlockAchievement": "ach_didnt_ask" } },
+        { "text": "试探:\"你最近是不是比较忙。\"", "next": "c2_09b_cb", "changes": { "val": 1, "set": { "friendDistance": 1 } } },
+        { "text": "直接问:\"你是不是不太一样了。\"", "next": "c2_09c_cb", "changes": { "val": 4, "set": { "friendDistance": 2 }, "importantFlag": { "flag": "asked_truth", "label": "你问了那句话" }, "unlockAchievement": "ach_truth_to_friend" } }
+      ]
+    },
+    "c2_09a_cb": {
+      "title": "不点破",
+      "progress": 52,
+      "scene": {
+        "id": "old_restaurant",
+        "name": "北门小馆"
+      },
+      "segments": [
+        { "text": "你没说什么。" },
+        { "text": "他吃得很快,吃完之后看了一下手机,说他还有点事。" },
+        { "text": "你说嗯,你慢走。" },
+        { "text": "他走了,留了帐。" }
+      ],
+      "next": "c3_01"
+    },
+    "c2_09b_cb": {
+      "title": "试探",
+      "progress": 52,
+      "scene": {
+        "id": "old_restaurant",
+        "name": "北门小馆"
+      },
+      "segments": [
+        { "speaker": "你", "text": "你最近是不是比较忙。" },
+        { "speaker": "旧友", "text": "......就那样。" },
+        { "text": "他笑了一下,那个笑你已经认不出来了。" },
+        { "speaker": "旧友", "text": "都那样吧,毕业之后都那样。" }
+      ],
+      "next": "c3_01"
+    },
+    "c2_09c_cb": {
+      "title": "直接问",
+      "progress": 52,
+      "scene": {
+        "id": "old_restaurant",
+        "name": "北门小馆"
+      },
+      "segments": [
+        { "speaker": "你", "text": "你是不是不太一样了。" },
+        { "text": "他愣了半秒。" },
+        { "speaker": "旧友", "text": "......你也是。" },
+        { "text": "你看着他,他看着汤。" },
+        { "text": "这一桌就这样到了买单。" }
+      ],
+      "next": "c3_01",
+      "changes": { "set": { "facepalmCount": 1, "saidGoodbye": true } }
+    },
+    "c3_01": {
+      "chapterTitle": "第三章 · 一个人",
+      "title": "校园的傍晚",
+      "progress": 58,
+      "scene": {
+        "id": "campus_dusk",
+        "name": "校园傍晚",
+        "type": "major",
+        "description": "天还亮,但已经是发蓝的那种亮。路上没什么人。",
+        "arrival": "你一个人沿着主干道走。"
+      },
+      "segments": [
+        { "text": "傍晚的校园冷清得有点不真实。" },
+        { "text": "六月底,大部分人已经走了。" },
+        { "text": "你听见自己拖鞋的声音。" }
+      ],
+      "choices": [
+        { "text": "去图书馆看一眼", "next": "c3_02a_cb", "changes": { "val": 3, "set": { "selfRoom": 1 } } },
+        { "text": "走到你最常去的那个角落", "next": "c3_02b_cb", "changes": { "val": 5, "set": { "selfRoom": 2 } } },
+        { "text": "直接回宿舍", "next": "c3_02c_cb", "changes": { "val": 1 } }
+      ]
+    },
+    "c3_02a_cb": {
+      "title": "图书馆",
+      "progress": 61,
+      "scene": {
+        "id": "library",
+        "name": "图书馆",
+        "type": "major",
+        "description": "灯还亮着,但二楼几乎没人。",
+        "arrival": "你刷卡进去。"
+      },
+      "segments": [
+        { "text": "你刷卡进去。门没卡你。" },
+        { "text": "你坐到了那个你大三整年都坐的位置。" },
+        { "text": "你没看书。你坐了大概二十分钟。" }
+      ],
+      "next": "c3_03"
+    },
+    "c3_02b_cb": {
+      "title": "那个角落",
+      "progress": 61,
+      "scene": {
+        "id": "the_corner",
+        "name": "湖边石凳",
+        "type": "major",
+        "description": "湖水今天很平。石凳还在,旁边那棵树长大了。",
+        "arrival": "你走过去坐下。"
+      },
+      "segments": [
+        { "text": "石凳还在,你坐下。" },
+        { "text": "湖水今天没风。" },
+        { "text": "你坐了很久。没有一个人经过这里。" },
+        { "speaker": "系统", "text": "这是你这四年第一次,把这个地方留给了自己。" }
+      ],
+      "next": "c3_03"
+    },
+    "c3_02c_cb": {
+      "title": "回宿舍",
+      "progress": 61,
+      "scene": {
+        "id": "dorm_road",
+        "name": "宿舍楼道",
+        "type": "transient",
+        "description": "楼道灯坏了一盏。"
+      },
+      "segments": [
+        { "text": "你拖着箱子上楼。" },
+        { "text": "楼道很安静,你听见自己开门的声音。" }
+      ],
+      "next": "c3_04"
+    },
+    "c3_03": {
+      "title": "天暗下来",
+      "progress": 64,
+      "scene": {
+        "id": "campus_dusk",
+        "name": "校园傍晚"
+      },
+      "segments": [
+        { "text": "天慢慢暗下来。" },
+        { "text": "你站起来,拍了拍裤子。" },
+        { "text": "你不饿。但你想吃一口热的。" }
+      ],
+      "choices": [
+        { "text": "去食堂", "next": "c3_03a_cb", "changes": { "val": 3, "unlockAchievement": "ach_eat_alone" } },
+        { "text": "去校外那家面馆", "next": "c3_03b_cb", "changes": { "val": 2 } }
+      ]
+    },
+    "c3_03a_cb": {
+      "title": "食堂",
+      "progress": 67,
+      "scene": {
+        "id": "canteen",
+        "name": "食堂",
+        "type": "major",
+        "description": "二食堂只开了一半窗口,人比窗口还少。",
+        "arrival": "你打了一份番茄炒蛋盖饭。"
+      },
+      "segments": [
+        { "text": "二食堂只开了一半窗口。" },
+        { "text": "你打了一份番茄炒蛋盖饭,自己端到角落那张四人桌。" },
+        { "text": "整张桌子,只有你一个人。" },
+        { "text": "你吃得很慢。" }
+      ],
+      "next": "c3_04"
+    },
+    "c3_03b_cb": {
+      "title": "面馆",
+      "progress": 67,
+      "scene": {
+        "id": "noodle_shop",
+        "name": "校外面馆",
+        "type": "major",
+        "description": "老板还是那个老板。店里有三个客人。",
+        "arrival": "你坐到了门口那个位子。"
+      },
+      "segments": [
+        { "speaker": "老板", "text": "好久不见啊。" },
+        { "speaker": "你", "text": "嗯。明天答辩。" },
+        { "speaker": "老板", "text": "那今天加个蛋。" },
+        { "text": "他没收你加蛋的钱。" }
+      ],
+      "next": "c3_04"
+    },
+    "c3_04": {
+      "title": "宿舍",
+      "progress": 71,
+      "scene": {
+        "id": "dorm_room",
+        "name": "宿舍",
+        "type": "major",
+        "description": "六张床,五张已经空了。床帘都拆了,床板裸着。",
+        "arrival": "你开门进去。"
+      },
+      "segments": [
+        { "text": "你推开门。" },
+        { "text": "六张床,五张已经空了。被子枕头都没了,床板裸着。" },
+        { "text": "你的那一张还在原位。" }
+      ],
+      "next": "c3_05"
+    },
+    "c3_05": {
+      "title": "你的床",
+      "progress": 74,
+      "scene": {
+        "id": "dorm_room",
+        "name": "宿舍"
+      },
+      "segments": [
+        { "text": "你坐在床边上。" },
+        { "text": "整间宿舍只有你一张床还有床帘。窗外有蝉声,断断续续。" },
+        { "speaker": "系统", "text": "你以为你会失落。" },
+        { "text": "你没有。" }
+      ],
+      "choices": [
+        { "text": "把床帘拉上,睡了", "next": "c3_06a_cb", "changes": { "val": 5, "set": { "selfRoom": 2 }, "unlockAchievement": "ach_empty_dorm" } },
+        { "text": "整理 PPT,改到凌晨", "next": "c3_06b_cb", "changes": { "val": 2 } }
+      ]
+    },
+    "c3_06a_cb": {
+      "title": "睡",
+      "progress": 77,
+      "scene": {
+        "id": "dorm_room",
+        "name": "宿舍"
+      },
+      "segments": [
+        { "text": "你把床帘拉上。" },
+        { "text": "那一拉,六张床里只有你那块布是合上的。" },
+        { "text": "你躺平。蝉声还在。" },
+        { "text": "你睡着了。" }
+      ],
+      "next": "c4_01"
+    },
+    "c3_06b_cb": {
+      "title": "改到凌晨",
+      "progress": 77,
+      "scene": {
+        "id": "dorm_room",
+        "name": "宿舍"
+      },
+      "segments": [
+        { "text": "你又把 PPT 打开。" },
+        { "text": "第 17 页那张图你又换了一次。" },
+        { "text": "凌晨两点,你把电脑合上。蝉声没了,空调外机的声音突然变大。" }
+      ],
+      "next": "c4_01"
+    },
+    "c4_01": {
+      "chapterTitle": "第四章 · 答辩",
+      "title": "302",
+      "progress": 82,
+      "scene": {
+        "id": "defense_room",
+        "name": "302 教室",
+        "type": "major",
+        "description": "投影开着,蓝屏。三位老师坐在最后一排,一张长桌摆着矿泉水。",
+        "arrival": "你推开 302 的门。"
+      },
+      "segments": [
+        { "text": "上午十点,你站在 302 门口。" },
+        { "text": "你推门进去。" },
+        { "text": "三位老师抬头看你。导师在最中间。" },
+        { "speaker": "导师", "text": "来,坐。" }
+      ],
+      "next": "c4_02"
+    },
+    "c4_02": {
+      "title": "讲",
+      "progress": 85,
+      "scene": {
+        "id": "defense_room",
+        "name": "302 教室"
+      },
+      "segments": [
+        { "text": "你接上线,把 PPT 翻到第一页。" },
+        { "text": "你开始讲。" },
+        { "text": "前五分钟讲完之后,你能听见自己心跳。第六分钟之后,心跳听不见了。" },
+        { "text": "你讲完最后一页。" }
+      ],
+      "next": "c4_03"
+    },
+    "c4_03": {
+      "title": "提问",
+      "progress": 88,
+      "scene": {
+        "id": "defense_room",
+        "name": "302 教室"
+      },
+      "segments": [
+        { "speaker": "评审老师", "text": "我看你这部分的方法用的是 A,但你前面写的目标更适合 B。你怎么解释这个不一致。" },
+        { "text": "你顿了一秒。" }
+      ],
+      "choices": [
+        { "text": "稳住,先承认:\"老师说得对,我当时确实没考虑——\"", "next": "c4_04a_cb", "changes": { "val": 4, "unlockAchievement": "ach_calm_defense" } },
+        { "text": "解释:\"A 在这个数据规模下更稳定——\"", "next": "c4_04b_cb", "changes": { "val": 2 } },
+        { "text": "紧张:\"......这个问题我没想到。\"", "next": "c4_04c_cb", "changes": { "val": -2, "set": { "facepalmCount": 1 } } }
+      ]
+    },
+    "c4_04a_cb": {
+      "title": "承认",
+      "progress": 91,
+      "scene": {
+        "id": "defense_room",
+        "name": "302 教室"
+      },
+      "segments": [
+        { "speaker": "你", "text": "老师说得对,我当时主要考虑的是稳定性,但确实和前面的目标不完全对齐。这个我后面会在论文里补充说明。" },
+        { "text": "那位老师点了点头,没再问。" }
+      ],
+      "next": "c4_05"
+    },
+    "c4_04b_cb": {
+      "title": "解释",
+      "progress": 91,
+      "scene": {
+        "id": "defense_room",
+        "name": "302 教室"
+      },
+      "segments": [
+        { "speaker": "你", "text": "A 在这个数据规模下更稳定,B 在我之前的预实验里收敛不太好——所以最后选了 A。" },
+        { "speaker": "评审老师", "text": "嗯。可以。" }
+      ],
+      "next": "c4_05"
+    },
+    "c4_04c_cb": {
+      "title": "卡住",
+      "progress": 91,
+      "scene": {
+        "id": "defense_room",
+        "name": "302 教室"
+      },
+      "segments": [
+        { "speaker": "你", "text": "......这个问题我之前没想到。" },
+        { "text": "你抓了一下话筒。" },
+        { "speaker": "导师", "text": "她做的时候是有理由的,我可以补一下——" },
+        { "text": "导师替你说了两句。" }
+      ],
+      "next": "c4_05"
+    },
+    "c4_05": {
+      "title": "通过",
+      "progress": 94,
+      "scene": {
+        "id": "defense_room",
+        "name": "302 教室"
+      },
+      "segments": [
+        { "speaker": "导师", "text": "好,你出去等一下。" },
+        { "text": "你站起来,把电脑收好。" },
+        { "text": "走廊里只有你一个人。" },
+        { "text": "大概十分钟后,门开了。" },
+        { "speaker": "导师", "text": "通过了。" },
+        { "text": "她拍了一下你的肩。" }
+      ],
+      "next": "c4_06"
+    },
+    "c4_06": {
+      "title": "出来",
+      "progress": 96,
+      "scene": {
+        "id": "academic_building",
+        "name": "教学楼外"
+      },
+      "segments": [
+        { "text": "你从教学楼出来。" },
+        { "text": "天很蓝。" },
+        { "text": "你想了一下接下来去哪儿。" }
+      ],
+      "choices": [
+        { "text": "一个人走出校门", "next": "closure_alone", "changes": { "val": 5, "set": { "selfRoom": 2 }, "importantFlag": { "flag": "alone_out", "label": "你一个人离开" }, "unlockAchievement": "ach_alone_after" } },
+        { "text": "再去湖边那个石凳坐一会儿", "next": "closure_clearing", "changes": { "val": 4, "set": { "selfRoom": 2 } } },
+        { "text": "给旧友发一条:我答辩完了", "condition": "hasFlag 'asked_truth'", "next": "closure_grown", "changes": { "importantFlag": { "flag": "send_after", "label": "你还是发了" }, "unlockAchievement": "ach_grown_up" } },
+        { "text": "给旧友发一条:我答辩完了", "condition": "!hasFlag 'asked_truth'", "next": "closure_polite", "changes": { "importantFlag": { "flag": "send_after", "label": "你还是发了" } } }
+      ]
+    },
+    "closure_alone": {
+      "title": "南门方向",
+      "progress": 98,
+      "scene": {
+        "id": "campus_gate",
+        "name": "校门口"
+      },
+      "segments": [
+        { "text": "你拖着箱子,从北门一直走到南门。" },
+        { "text": "你没回头。" },
+        { "text": "出校门的时候,门口那块石头被太阳照着,你没拍照。" }
+      ],
+      "next": "ending_clearing"
+    },
+    "closure_clearing": {
+      "title": "湖边",
+      "progress": 98,
+      "scene": {
+        "id": "the_corner",
+        "name": "湖边石凳"
+      },
+      "segments": [
+        { "text": "你又走到湖边。" },
+        { "text": "石凳上还是没人。" },
+        { "text": "你坐下,把答辩用的电脑放在腿上,没打开。" },
+        { "text": "你看着水面,水面看着你。" }
+      ],
+      "next": "ending_clearing"
+    },
+    "closure_grown": {
+      "title": "他回了",
+      "progress": 98,
+      "scene": {
+        "id": "campus_road",
+        "name": "校园里"
+      },
+      "segments": [
+        { "text": "你发了:我答辩完了。" },
+        { "text": "他这次回得很快。" },
+        { "speaker": "旧友", "text": "恭喜。" },
+        { "speaker": "旧友", "text": "昨天那句话——我也不知道我怎么了。" },
+        { "speaker": "旧友", "text": "可能我们都那样了。" },
+        { "text": "你看着这句话,看了很久。" }
+      ],
+      "next": "ending_grown"
+    },
+    "closure_polite": {
+      "title": "他回了好",
+      "progress": 98,
+      "scene": {
+        "id": "campus_road",
+        "name": "校园里"
+      },
+      "segments": [
+        { "text": "你发了:我答辩完了。" },
+        { "text": "过了二十分钟,他回了:好。" },
+        { "text": "就这一个字。" }
+      ],
+      "next": "ending_polite"
+    },
+    "ending_clearing": {
+      "isEnding": true,
+      "title": "清场",
+      "type": "TRUE ENDING",
+      "progress": 100,
+      "achievement": "ach_clearing",
+      "ambient": "wind",
+      "description": "毕业证你过两个礼拜会收到。学位证你过两个月会收到。你回到那座你工作的城市,走进出租屋,把登机箱扔在门口。你打开手机相册,这趟没拍几张。一张是飞机舷窗外的云面,一张是湖边那张空着的石凳。",
+      "closing": "你这四年第一次,把这个学校留给了自己。它也是第一次,把自己整个交给你。",
+      "effect": "breath"
+    },
+    "ending_grown": {
+      "isEnding": true,
+      "title": "都那样了",
+      "type": "HIDDEN ENDING",
+      "progress": 100,
+      "achievement": "ach_grown_up",
+      "description": "你没回他。你把手机扣过来,放在桌上。下午你坐上回北京的高铁,他那一句'我们都那样了'一直停在你的对话框里。你忽然想清楚一件事——你昨天觉得他变冷漠了,可能不是他一个人变了,是你们俩都在用不同的方式,跟过去的自己道别。",
+      "closing": "原来冷漠不是一个人的事,是一群人的事。你也是。",
+      "effect": "breath"
+    },
+    "ending_polite": {
+      "isEnding": true,
+      "title": "好",
+      "type": "NORMAL ENDING",
+      "progress": 100,
+      "description": "你看了那个'好'字大概一分钟。然后你把手机塞回兜里,继续往南门走。你拖着箱子,过了校门口那块石头,过了校门外的马路,过了打车点。你叫了一辆车去机场。",
+      "closing": "有些朋友就是这样,从'我们'变成'你和我',再变成两条平行的'好'。",
+      "effect": "breath"
+    }
+  }
+}

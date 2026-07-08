@@ -859,6 +859,100 @@
       align-items: center;
     }
 
+    .sample-picker {
+      display: grid;
+      gap: 18px;
+      margin-top: 8px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .sample-picker-head {
+      display: grid;
+      gap: 8px;
+    }
+
+    .sample-eyebrow,
+    .sample-meta {
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .sample-picker-head strong {
+      color: var(--text);
+      font-size: clamp(22px, 3vw, 36px);
+      line-height: 1.1;
+      letter-spacing: -.04em;
+    }
+
+    .sample-picker-head p {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .sample-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+    }
+
+    .sample-card {
+      min-height: 168px;
+      display: grid;
+      align-content: space-between;
+      gap: 18px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background:
+        linear-gradient(145deg, color-mix(in srgb, var(--panel-solid) 74%, transparent), color-mix(in srgb, var(--panel) 64%, transparent)),
+        radial-gradient(circle at 88% 12%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 34%);
+      color: var(--text);
+      text-align: left;
+      box-shadow: 0 18px 48px color-mix(in srgb, var(--shadow) 42%, transparent);
+      cursor: pointer;
+      transition: transform 220ms var(--ease), border-color 220ms var(--ease), background 220ms var(--ease);
+    }
+
+    .sample-card:hover {
+      transform: translateY(-3px);
+      border-color: color-mix(in srgb, var(--accent) 58%, var(--line));
+      background:
+        linear-gradient(145deg, color-mix(in srgb, var(--panel-solid) 84%, transparent), color-mix(in srgb, var(--panel) 74%, transparent)),
+        radial-gradient(circle at 88% 12%, color-mix(in srgb, var(--accent) 24%, transparent), transparent 36%);
+    }
+
+    .sample-card strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--text);
+      font-family: "Songti SC", "Noto Serif SC", serif;
+      font-size: clamp(22px, 2.4vw, 30px);
+      line-height: 1.18;
+      letter-spacing: -.04em;
+    }
+
+    .sample-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .sample-card em {
+      color: var(--accent);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      letter-spacing: .08em;
+    }
+
     .primary {
       color: var(--bg-0);
       background: var(--accent);
@@ -2363,6 +2457,7 @@
 
       .library-view .brand,
       .library-view .launcher-actions,
+      .library-view .sample-picker,
       .library-view .tape-library,
       .library-view .tape-deck {
         grid-column: auto;
@@ -2571,6 +2666,11 @@
       width: 100%;
       padding: 0;
       border: 0;
+    }
+
+    .library-view .sample-picker {
+      grid-column: 1 / -1;
+      align-self: stretch;
     }
 
     .library-view .tape-library {
@@ -3682,8 +3782,8 @@
           <div class="tape-slot"></div>
         </div>
         <div class="brand">
-          <h1 id="launcherTitle">分支剧情启动器</h1>
-          <p id="launcherCopy">插入 JSON 剧本，或从本地目录继续。这里保留作品、记录与可继续阅读的进度。</p>
+          <h1 id="launcherTitle">选择一个故事开始</h1>
+          <p id="launcherCopy">直接打开下方示例剧本，或插入自己的 JSON 剧本继续体验分支剧情。</p>
           <div class="maker-credit">Tully Optimized Edition · 快速模式优化版</div>
         </div>
 
@@ -3698,6 +3798,15 @@
             <button type="button" data-color-mode-choice="dark">深</button>
           </div>
         </div>
+
+        <section class="sample-picker" id="samplePicker" aria-label="示例剧本选择">
+          <div class="sample-picker-head">
+            <div class="sample-eyebrow">Sample Library</div>
+            <strong>选择一个示例剧本开始体验</strong>
+            <p>这里列出当前仓库随附的示例。点击任意卡片会直接载入剧本；也可以继续使用「插入 JSON」导入自己的故事。</p>
+          </div>
+          <div class="sample-grid" id="sampleGrid"></div>
+        </section>
 
         <div class="tape-library" id="cachePanel">
           <div class="tape-library-title">本地剧本</div>
@@ -4001,6 +4110,33 @@
       }
     };
 
+    const SAMPLE_LIBRARY = [
+      {
+        title: "雨夜来信",
+        meta: "内置短篇 · 9 节点 · 2 结局",
+        description: "一封没有署名的雨夜来信，用最小体量展示启动器的基础交互、变量和结局。",
+        story: SAMPLE_STORY
+      },
+      {
+        title: "成人日",
+        meta: "大型示例 · 361 节点 · 7 结局",
+        description: "计划爱情制度下的分支叙事示例，包含复杂变量、隐藏路线和多结局矩阵。",
+        file: "测试案例-成人日.json"
+      },
+      {
+        title: "家长会",
+        meta: "生活片段 · 64 节点 · 5 结局",
+        description: "围绕一次替家人参加家长会展开，展示短素材如何生成轻量但完整的互动文游。",
+        file: "家长会.json"
+      },
+      {
+        title: "清场",
+        meta: "快速模式示例 · 52 节点 · 3 结局",
+        description: "从毕业答辩和回校片段出发，展示快速模式下的短素材改写效果。",
+        file: "清场.json"
+      }
+    ];
+
     const state = {
       story: null,
       currentNodeId: "",
@@ -4047,6 +4183,7 @@
       importBtn: document.getElementById("importBtn"),
       libraryBtn: document.getElementById("libraryBtn"),
       sampleBtn: document.getElementById("sampleBtn"),
+      sampleGrid: document.getElementById("sampleGrid"),
       clearCacheBtn: document.getElementById("clearCacheBtn"),
       cacheList: document.getElementById("cacheList"),
       launcherTitle: document.getElementById("launcherTitle"),
@@ -4174,6 +4311,49 @@
         if (!node.isEnding && !node.segments && !node.choices && !node.next && !node.routes && !node.chapterTitle) {
           throw new Error(`节点 ${id} 没有可播放内容、选项、跳转或路由。`);
         }
+      }
+    }
+
+    function renderSampleGrid() {
+      if (!el.sampleGrid) return;
+      el.sampleGrid.innerHTML = "";
+      SAMPLE_LIBRARY.forEach((entry, index) => {
+        const card = document.createElement("button");
+        card.type = "button";
+        card.className = "sample-card";
+        card.dataset.sampleIndex = String(index);
+
+        const copy = document.createElement("div");
+        const title = document.createElement("strong");
+        title.textContent = entry.title;
+        const description = document.createElement("span");
+        description.textContent = entry.description;
+        copy.append(title, description);
+
+        const meta = document.createElement("em");
+        meta.textContent = entry.meta;
+        card.append(copy, meta);
+        el.sampleGrid.appendChild(card);
+      });
+    }
+
+    async function loadSampleEntry(entry) {
+      if (!entry) return;
+      if (entry.story) {
+        loadStory(deepClone(entry.story), { animate: true, cache: true });
+        return;
+      }
+
+      try {
+        showToast("正在载入示例", entry.title);
+        const response = await fetch(encodeURI(entry.file), { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const story = await response.json();
+        loadStory(story, { animate: true, cache: true });
+      } catch (error) {
+        const message = `${entry.title} 加载失败：${error.message}`;
+        showToast("示例载入失败", message);
+        alert(message);
       }
     }
 
@@ -7172,8 +7352,14 @@
       event.target.value = "";
     });
 
+    renderSampleGrid();
     el.sampleBtn.addEventListener("click", () => {
-      loadStory(deepClone(SAMPLE_STORY), { animate: true, cache: true });
+      el.sampleGrid?.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+    el.sampleGrid?.addEventListener("click", event => {
+      const card = event.target.closest("[data-sample-index]");
+      if (!card) return;
+      loadSampleEntry(SAMPLE_LIBRARY[Number(card.dataset.sampleIndex)]);
     });
     if (!canUseLocalLibrary()) {
       el.libraryBtn.disabled = true;
